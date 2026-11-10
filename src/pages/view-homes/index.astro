@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { projectPhotos, projects } from '../../data/site';
+---
+
+<BaseLayout
+  title="View Homes | Neri, Inc."
+  description="Current and past custom home projects from Neri, Inc."
+>
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <p class="font-meta uppercase tracking-wide">Custom homes built in Crete, Illinois and beyond</p>
+      <h1 class="mt-2 text-4xl">Current and past custom home projects</h1>
+      <p class="mt-4 max-w-3xl leading-7">
+        At Neri Inc., we specialize in designing and building one-of-a-kind custom homes for families throughout Crete,
+        the South Suburbs of Chicago, and Northwest Indiana. Our Previous Custom Homes gallery highlights the quality,
+        craftsmanship, and creativity that go into every project. No two homes are alike—each is tailored to fit our
+        clients’ needs, style, and lifestyle. Browse these past builds for inspiration and see what’s possible when you
+        partner with a trusted local home builder.
+      </p>
+    </div>
+  </section>
+  <section class="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:grid-cols-2">
+    {
+      projects.map((project) => {
+        const cover = projectPhotos(project.slug)[0];
+        return (
+          <a href={`/view-homes/${project.slug}`} class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            {cover && <img src={cover.file} alt={project.alt} class="h-64 w-full object-cover" />}
+            <div class="p-5">
+              <h2 class="text-2xl">{project.title}</h2>
+            </div>
+          </a>
+        );
+      })
+    }
+  </section>
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# This preview sends noindex. Crawling stays allowed so the tag can be seen.

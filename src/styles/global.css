@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "@fontsource/montserrat/latin-400.css";
+@import "@fontsource/montserrat/latin-500.css";
+@import "@fontsource/montserrat/latin-600.css";
+@import "@fontsource/montserrat/latin-700.css";
+@import "@fontsource/lato/latin-400.css";
+@import "@fontsource/lato/latin-700.css";
+@import "@fontsource/pontano-sans/latin-400.css";
+@import "@fontsource/pontano-sans/latin-600.css";
+
+@source "../../node_modules/flowbite-vue/src";
+
+/*
+  Flowbite-Vue paints buttons and focus rings with the blue scale.
+  Those tokens are the accent #FC221C and shades of the same hue,
+  so the components stay unmodified.
+*/
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-meta: "Pontano Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #362f17;
+  --color-paper: #f6f3ea;
+  --color-accent: #fc221c;
+  --color-rule: #a8a6a1;
+
+  --color-blue-50: #fff5f4;
+  --color-blue-100: #ffe4e1;
+  --color-blue-200: #ffc9c4;
+  --color-blue-300: #ff9d96;
+  --color-blue-400: #ff645b;
+  --color-blue-500: #ff3d33;
+  --color-blue-600: #fc221c;
+  --color-blue-700: #fc221c;
+  --color-blue-800: #d0120d;
+  --color-blue-900: #a30e0a;
+  --color-blue-950: #5c0705;
+
+  --color-primary-50: #fff5f4;
+  --color-primary-100: #ffe4e1;
+  --color-primary-200: #ffc9c4;
+  --color-primary-300: #ff9d96;
+  --color-primary-400: #ff645b;
+  --color-primary-500: #ff3d33;
+  --color-primary-600: #fc221c;
+  --color-primary-700: #fc221c;
+  --color-primary-800: #d0120d;
+  --color-primary-900: #a30e0a;
+  --color-primary-950: #5c0705;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}

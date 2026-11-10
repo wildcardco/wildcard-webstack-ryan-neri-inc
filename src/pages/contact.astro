@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.vue';
+import {
+  email,
+  emailHref,
+  hours,
+  mailingAddress,
+  phoneDisplay,
+  phoneTel,
+  serviceArea,
+} from '../data/site';
+import patio from '../assets/img/gbp-02-patio-pillars.jpg';
+import pavilion from '../assets/img/gbp-04-pavilion.jpg';
+---
+
+<BaseLayout
+  title="Contact | Neri, Inc."
+  description="Start a project with Neri, Inc. Call, email, or send a note. Monday–Friday 10am–6pm."
+>
+  <section class="bg-paper">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1fr_1.1fr]">
+      <div>
+        <h1 class="text-4xl">Your forever home, without the guesswork</h1>
+        <p class="mt-4 leading-7">
+          Ready to build the home of your dreams? Rather than hire a subcontractor and try to figure out the rest on
+          your own, we provide full-service custom home building, landscaping, and plumbing support.
+        </p>
+        <dl class="mt-8 space-y-3">
+          <div>
+            <dt class="font-meta">Phone</dt>
+            <dd><a class="text-accent hover:underline" href={phoneTel}>{phoneDisplay}</a></dd>
+          </div>
+          <div>
+            <dt class="font-meta">Email</dt>
+            <dd><a class="text-accent hover:underline" href={emailHref}>{email}</a></dd>
+          </div>
+          <div>
+            <dt class="font-meta">Hours</dt>
+            <dd>{hours}</dd>
+          </div>
+          <div>
+            <dt class="font-meta">Mailing address</dt>
+            <dd>{mailingAddress}</dd>
+          </div>
+          <div>
+            <dt class="font-meta">Service area</dt>
+            <dd>{serviceArea}</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+        <h2 class="text-2xl">Contact us.</h2>
+        <div class="mt-6">
+          <ContactForm client:visible />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mx-auto grid max-w-6xl gap-4 px-4 py-12 sm:grid-cols-2">
+    <Image
+      src={patio}
+      alt="New paver patio with stone pillars beside a brick house."
+      widths={[480, 900]}
+      sizes="(min-width: 640px) 50vw, 100vw"
+      class="h-72 w-full rounded-lg object-cover"
+    />
+    <Image
+      src={pavilion}
+      alt="Screened gabled pavilion with a fire pit on a paver patio."
+      widths={[480, 900]}
+      sizes="(min-width: 640px) 50vw, 100vw"
+      class="h-72 w-full rounded-lg object-cover"
+    />
+  </section>
+</BaseLayout>

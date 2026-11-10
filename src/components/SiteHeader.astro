@@ -1,0 +1,78 @@
+---
+const path = Astro.url.pathname;
+const serviceActive = ['/custom-home-building', '/landscape', '/plumbing'].some((href) =>
+  path.startsWith(href),
+);
+
+const link = 'block rounded-lg px-3 py-2 font-meta text-base text-white hover:bg-white/10';
+---
+
+<header class="bg-ink text-white">
+  <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3" aria-label="Primary">
+    <a href="/" class="shrink-0">
+      <img
+        src="/img/logo-neri-inc.png"
+        alt="Neri, Inc."
+        width="180"
+        height="48"
+        class="h-11 w-auto"
+      />
+    </a>
+    <label
+      for="nav-toggle"
+      class="inline-flex cursor-pointer items-center rounded-lg p-2 hover:bg-white/10 md:hidden"
+    >
+      <span class="sr-only">Open menu</span>
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </label>
+    <input id="nav-toggle" type="checkbox" class="peer sr-only" />
+    <div class="max-md:hidden w-full max-md:peer-checked:block md:flex md:w-auto md:items-center">
+      <ul class="mt-3 flex flex-col md:mt-0 md:flex-row md:items-center md:gap-1">
+        <li>
+          <a href="/" class={link} aria-current={path === '/' ? 'page' : undefined}>Home</a>
+        </li>
+        <li>
+          <a href="/about" class={link} aria-current={path.startsWith('/about') ? 'page' : undefined}>About</a>
+        </li>
+        <li class="relative">
+          <details class="group">
+            <summary
+              class={`${link} flex cursor-pointer items-center gap-1 ${serviceActive ? 'underline decoration-accent decoration-2 underline-offset-8' : ''}`}
+            >
+              Services
+              <svg class="h-3 w-3" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="m1 1 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              </svg>
+            </summary>
+            <div
+              class="z-20 mt-1 w-full rounded-lg bg-white py-2 text-ink shadow md:absolute md:w-64"
+            >
+              <a class="block px-4 py-2 hover:bg-paper" href="/custom-home-building">Custom Home Building</a>
+              <a class="block px-4 py-2 hover:bg-paper" href="/landscape">Landscape</a>
+              <a class="block px-4 py-2 hover:bg-paper" href="/plumbing">Plumbing</a>
+            </div>
+          </details>
+        </li>
+        <li>
+          <a
+            href="/view-homes"
+            class={link}
+            aria-current={path.startsWith('/view-homes') ? 'page' : undefined}
+          >
+            View Homes
+          </a>
+        </li>
+        <li class="mt-2 md:mt-0 md:ml-3">
+          <a
+            href="/contact"
+            class="inline-block rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+            get started
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,185 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import {
+  homeServices,
+  homeTitle,
+  phoneDisplay,
+  phoneTel,
+  projectPhotos,
+  projects,
+  serviceArea,
+  testimonials,
+  unilockLine,
+} from '../data/site';
+import hero from '../assets/img/gbp-06-dusk-fire-pit.jpg';
+import patio from '../assets/img/gbp-02-patio-pillars.jpg';
+import firePit from '../assets/img/gbp-03-fire-pit-seat-wall.jpg';
+import pavilion from '../assets/img/gbp-04-pavilion.jpg';
+import pergola from '../assets/img/gbp-05-pergola.jpg';
+import wetPatio from '../assets/img/gbp-07-wet-patio.jpg';
+import wall from '../assets/img/gbp-08-block-wall.jpg';
+
+const outdoor = [
+  { src: patio, alt: 'New paver patio with stone pillars beside a brick house.' },
+  { src: firePit, alt: 'Paver patio with a round fire pit and a curved seat wall.' },
+  { src: pavilion, alt: 'Screened gabled pavilion with a fire pit on a paver patio.' },
+  { src: pergola, alt: 'Cream pergola on stone piers over a paver patio.' },
+  { src: hero, alt: 'Dusk patio with a lit fire pit, a gazebo, and a blue-lit pool.' },
+  { src: wetPatio, alt: 'Wet paver patio with a dining set and a closed umbrella.' },
+  { src: wall, alt: 'Curved block wall and stone steps beside a paver patio and the water.' },
+];
+
+const featured = projects.filter((project) => project.featured);
+---
+
+<BaseLayout
+  title={homeTitle}
+  description="Custom homes, landscape, and in-house plumbing from Neri, Inc., a family company in Crete and the South Suburbs."
+>
+  <section class="relative min-h-[70vh] bg-ink text-white">
+    <Image
+      src={hero}
+      alt="Dusk patio with a lit fire pit, a gazebo, and a blue-lit pool."
+      widths={[480, 768, 1179]}
+      sizes="100vw"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-end px-4 py-16">
+      <p class="font-meta text-sm uppercase tracking-wide">Neri, Inc.</p>
+      <h1 class="mt-3 max-w-3xl text-4xl leading-tight md:text-5xl">{unilockLine}</h1>
+      <p class="mt-4 max-w-2xl text-lg">
+        Your forever home, crafted with care in Crete, Frankfort, Mokena, Orland Park, and the rest of the South
+        Suburbs and Northwest Indiana — home, outdoor living, and in-house plumbing, all under one roof.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="/contact"
+          class="inline-block rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          Start your project
+        </a>
+        <a
+          href={phoneTel}
+          class="inline-block rounded-lg border border-white px-5 py-2.5 text-sm font-medium text-white hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/40"
+        >
+          {phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 py-16 md:grid-cols-3">
+      {
+        homeServices.map((service) => (
+          <article class="flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm">
+            <div class="flex-1 p-5">
+              <h2 class="text-2xl">{service.title}</h2>
+              <ul class="mt-4 list-disc space-y-2 pl-5">
+                {service.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="p-5 pt-0">
+              <a class="font-medium text-accent hover:underline" href={service.href}>
+                See {service.title}
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-3xl">One team for the house and the yard</h2>
+    <p class="mt-4 max-w-3xl text-lg leading-8">
+      At Neri, Inc., homes, landscape, and plumbing are handled in-house. Whether you are building from the ground
+      up, renovating an existing space, or adding on, you don’t need to source subcontractors or project manage the
+      work yourself. No third-party vendors. No coordination stress.
+    </p>
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-3xl">Featured homes</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {
+          featured.map((project) => {
+            const cover = projectPhotos(project.slug)[0];
+            return (
+              <a href={`/view-homes/${project.slug}`} class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                {cover && <img src={cover.file} alt={project.alt} class="h-64 w-full object-cover" />}
+                <div class="p-5">
+                  <h3 class="text-2xl">{project.title}</h3>
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <div class="flex items-end justify-between gap-4">
+      <h2 class="text-3xl">Outdoor living</h2>
+      <a class="font-medium text-accent hover:underline" href="/landscape">Landscape</a>
+    </div>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        outdoor.map((photo) => (
+          <a href="/landscape" class="block overflow-hidden rounded-lg">
+            <Image src={photo.src} alt={photo.alt} widths={[400, 720]} sizes="(min-width: 1024px) 33vw, 100vw" class="h-56 w-full object-cover" />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <p class="font-meta uppercase tracking-wide">The family</p>
+      <h2 class="mt-2 text-3xl">Started in 1991 as Vincent’s Landscaping</h2>
+      <p class="mt-4 max-w-3xl text-lg leading-8">
+        Started in 1991 as Vincent’s Landscaping. Now it is Vince, Jennifer, Nick, and Alyssa.
+      </p>
+      <a
+        href="/about"
+        class="mt-6 inline-block rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        About the family
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-3xl">What clients wrote</h2>
+    <div class="mt-8 grid gap-6 lg:grid-cols-3">
+      {
+        testimonials.map((item) => (
+          <figure class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+            {'title' in item && item.title && <p class="font-heading text-lg">{item.title}</p>}
+            <blockquote class="mt-3 leading-7">“{item.quote}”</blockquote>
+            <figcaption class="mt-4 font-meta">— {item.name}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="border-y border-rule bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <p class="font-meta uppercase tracking-wide">Service area</p>
+      <p class="mt-2 text-lg">{serviceArea}</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

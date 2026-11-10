@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+import patio from '../assets/img/gbp-02-patio-pillars.jpg';
+import firePit from '../assets/img/gbp-03-fire-pit-seat-wall.jpg';
+import pavilion from '../assets/img/gbp-04-pavilion.jpg';
+import pergola from '../assets/img/gbp-05-pergola.jpg';
+import wetPatio from '../assets/img/gbp-07-wet-patio.jpg';
+import wall from '../assets/img/gbp-08-block-wall.jpg';
+
+const photos = [
+  { src: patio, alt: 'New paver patio with stone pillars beside a brick house.' },
+  { src: firePit, alt: 'Paver patio with a round fire pit and a curved seat wall.' },
+  { src: pavilion, alt: 'Screened gabled pavilion with a fire pit on a paver patio.' },
+  { src: pergola, alt: 'Cream pergola on stone piers over a paver patio.' },
+  { src: wetPatio, alt: 'Wet paver patio with a dining set and a closed umbrella.' },
+  { src: wall, alt: 'Curved block wall and stone steps beside a paver patio and the water.' },
+];
+
+const offers = [
+  ['Landscape & Garden Design', 'Thoughtfully designed greenery and flower beds that add beauty and structure to your property. Whether starting from scratch or refreshing your space, we design with both aesthetics and functionality in mind.'],
+  ['Irrigation & Sprinkler Systems', 'Efficient, reliable systems that keep your yard thriving—without the water waste or constant upkeep. Designed to support long-term plant health and protect your investment.'],
+  ['Custom Outdoor Lighting', 'Set the mood and enhance safety with elegant lighting features that highlight your home’s exterior and create a welcoming glow long after the sun goes down.'],
+  ['Decks, Pergolas & Patios', 'Gather, relax, and dine in style with outdoor structures built to last. These spaces blend form and function while seamlessly matching the architecture of your home.'],
+  ['Pool Houses & Outdoor Kitchens', 'Make your backyard feel like a resort. We build everything from shaded lounge areas to full-service kitchens that make entertaining a breeze.'],
+  ['Fire Pits & Fire Features', 'Extend your outdoor season with warmth and ambience. Whether you’re roasting marshmallows or just enjoying a quiet night under the stars, our custom fire features make it memorable.'],
+  ['Drainage & Stormwater Control', 'Midwest storms are no match for smart drainage design. We protect your property with solutions that keep water where it belongs and your yard usable year-round.'],
+];
+---
+
+<BaseLayout
+  title="Landscape | Neri, Inc."
+  description="Landscape and garden design, irrigation, lighting, patios, and outdoor living from Neri, Inc."
+>
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <p class="font-meta uppercase tracking-wide">Landscaping</p>
+      <h1 class="mt-2 max-w-3xl text-4xl">We’ve been perfecting outdoor spaces since 1991.</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8">
+        With Neri, you’ll extend your living space to the outdoors with exquisitely designed landscaping and decades of
+        hands-on experience.
+      </p>
+      <p class="mt-4 max-w-3xl leading-7">
+        We believe your outdoor space should feel like an extension of your home—beautiful, functional, and built for
+        making memories. Whether you're looking to host the perfect backyard gathering or create a quiet sanctuary just
+        steps from your door, our landscaping team will help bring that vision to life.
+      </p>
+      <a
+        href="/contact?type=landscape"
+        class="mt-8 inline-block rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+      >
+        Start your project
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-4 px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      photos.map((photo) => (
+        <Image src={photo.src} alt={photo.alt} widths={[400, 800]} sizes="(min-width: 1024px) 33vw, 100vw" class="h-64 w-full rounded-lg object-cover" />
+      ))
+    }
+  </section>
+
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="text-3xl">Here’s a look at what we offer</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {
+          offers.map((offer) => (
+            <article class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+              <h3 class="text-xl">{offer[0]}</h3>
+              <p class="mt-3 leading-7">{offer[1]}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CtaBand href="/contact?type=landscape" />
+</BaseLayout>

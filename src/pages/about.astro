@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const timeline = [
+  {
+    year: '1991',
+    copy: [
+      'Vincent Neri starts Vincent’s Landscaping right out of high school, mowing lawns and planting the seeds of a lifelong dream.',
+      'Jennifer joins Vincent at the business after joining in marriage.',
+    ],
+    image: '/img/about/vince-mowing.jpg',
+    alt: 'A person mowing a lawn on an orange riding mower.',
+  },
+  {
+    year: '2000',
+    copy: [
+      'They welcome two children, Nick and Alyssa, who grow up surrounded by soil, sawdust, and the spirit of entrepreneurship. Family and business become inseparable.',
+    ],
+    image: '/img/about/vince-nick.jpg',
+    alt: 'An adult and a child sitting in the cab of a yellow excavator.',
+  },
+  {
+    year: '2010s',
+    copy: [
+      'The business expands steadily. Vincent’s Landscaping became a trusted name in the industry, known for reliability, craftsmanship, and integrity.',
+      'Recognizing a growing need in the community, Vincent and Jennifer expand their offerings to include custom home building—creating not just backyards, but entire homes designed for life’s real moments. As a family business, everyone pitches in with the kids helping over the summers.',
+    ],
+    image: '/img/about/framing.jpg',
+    alt: 'A house under construction, wrapped, with a lift beside it.',
+  },
+  {
+    year: '2020s',
+    copy: [
+      'To better support seamless project management, Neri brings plumbing in-house, ensuring every phase of your home—from foundation to faucet—is handled with care.',
+    ],
+    image: '/img/about/rough-plumbing.jpg',
+    alt: 'White plumbing pipes and blue lines in an open framed wall.',
+  },
+  {
+    year: '2024',
+    copy: [
+      'Their son, Nick, recently joined the company full-time after graduating high school, carrying on the family tradition. Having spent his summers learning alongside the landscaping team, he’s now preparing to lead that division, freeing Vincent to focus more fully on custom homes.',
+    ],
+    image: '/img/about/company-trucks.jpg',
+    alt: 'Red work trucks and a white van parked in front of a metal building.',
+  },
+];
+---
+
+<BaseLayout
+  title="About | Neri, Inc."
+  description="The Neri family story: Vincent and Jennifer, Nick and Alyssa, from Vincent’s Landscaping in 1991."
+>
+  <section class="bg-paper">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <p class="font-meta uppercase tracking-wide">About Neri</p>
+      <h1 class="mt-2 text-4xl">A family tradition of craftsmanship, built on trust</h1>
+      <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8">
+        <p>
+          Founded in 1991, Neri, Inc. is your trusted partner for full-service home building and landscaping. We’ve
+          grown alongside the families we serve in Crete, Illinois—creating spaces where life can unfold, traditions
+          can flourish, and futures are built.
+        </p>
+        <p>
+          At Neri, Inc., every brick laid, garden planted, and blueprint drawn is part of a legacy. What began as
+          founder Vincent's dream has grown into a family-run company committed to helping others create homes filled
+          with warmth, resilience, and memory-making moments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-3xl">Our story</h2>
+    <ol class="mt-8 space-y-10">
+      {
+        timeline.map((entry) => (
+          <li class="grid gap-6 border-t border-rule pt-8 md:grid-cols-[8rem_1fr_16rem]">
+            <p class="font-meta text-xl">{entry.year}</p>
+            <div class="space-y-3 leading-7">
+              {entry.copy.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+            <img src={entry.image} alt={entry.alt} class="h-48 w-full rounded-lg object-cover" />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

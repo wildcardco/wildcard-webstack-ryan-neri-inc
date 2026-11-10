@@ -1,0 +1,30 @@
+---
+import { email, emailHref, hours, phoneDisplay, phoneTel } from '../data/site';
+
+interface Props {
+  href?: string;
+}
+
+const { href = '/contact' } = Astro.props;
+---
+
+<section class="bg-accent text-white">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-12 md:flex-row md:items-center md:justify-between">
+    <div>
+      <h2 class="text-3xl">Start your project</h2>
+      <p class="mt-2 font-meta">
+        <a class="underline" href={phoneTel}>{phoneDisplay}</a>
+        <span aria-hidden="true"> · </span>
+        <a class="underline" href={emailHref}>{email}</a>
+        <span aria-hidden="true"> · </span>
+        {hours}
+      </p>
+    </div>
+    <a
+      href={href}
+      class="inline-block rounded-lg bg-white px-5 py-2.5 text-center text-sm font-medium text-ink hover:bg-paper focus:outline-none focus:ring-4 focus:ring-white/70"
+    >
+      Start your project
+    </a>
+  </div>
+</section>

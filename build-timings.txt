@@ -1,0 +1,53 @@
+build timings 
+total 1.03s · 17 pages · output "static"
+
+Build phases
+  resolve config                        89ms   8.6% ██····················
+  setup                                261ms  25.3% ··█████▆··············
+    route discovery                      6ms   0.6% ···▂··················
+    vite config                         20ms   2.0% ···▃▁·················
+    content sync                       168ms  16.2% ····███▆··············
+  prerender bundle                     329ms  31.8% ········▅██████▄······
+  client bundle                        125ms  12.1% ···············▅██▁···
+  manifest injection                     6ms   0.6% ···················▁··
+  rearrange assets                       1ms   0.1% ···················▁··
+  generate pages                        92ms   8.9% ····················██
+    prerenderer setup                   12ms   1.2% ····················▃·
+    static paths                         3ms   0.3% ····················▁·
+
+Vite plugins (241ms of the build)
+  @tailwindcss/vite:generate:build     108ms        ··········▁██▃········  1 call · transform 108ms
+  astro:assets:esm                      53ms        ·········▁█▁··········  8 calls · load 53ms
+  vite:vue                              39ms        ··········▆····▂······  8 calls · transform 39ms
+  vite:css                              32ms        ·············▆▁·······  6 calls · transform 32ms
+  astro:build                            9ms        ·········▂▁···········  19 calls · transform 9ms
+  vite:css-post                          7ms        ··············▂·······  31 calls · renderChunk 6ms
+  astro:session-provider                 5ms        ········▁▁············  807 calls · resolveId 5ms
+  astro:routes                           5ms        ········▁▁············  287 calls · transform 5ms
+
+Slowest files to bundle (210ms in load/transform)
+  src/styles/global.css                140ms        ··········▁███▁·······  @tailwindcss/vite:generate:build 108ms · vite:css 32ms
+  …sets/img/gbp-02-patio-pillars.jpg    53ms        ··········█▁··········  astro:assets:esm 53ms
+  …c/assets/img/gbp-07-wet-patio.jpg    44ms        ··········█···········  astro:assets:esm 44ms
+  …sets/img/gbp-06-dusk-fire-pit.jpg    40ms        ··········▇···········  astro:assets:esm 39ms
+  …/assets/img/gbp-08-block-wall.jpg    39ms        ··········▇···········  astro:assets:esm 39ms
+  src/components/ContactForm.vue        39ms        ··········▆····▂······  vite:vue 39ms
+  src/assets/img/gbp-04-pavilion.jpg    39ms        ·········▁▇···········  astro:assets:esm 38ms
+  src/assets/img/gbp-01-house.jpg       38ms        ··········▇···········  astro:assets:esm 38ms
+
+Page rendering (70ms across 17 pages)
+  component render                      55ms   5.4% ····················▅▅
+  page pipeline                         15ms   1.4%
+
+Slowest pages (median 2ms · p95 34ms)
+  /contact                              34ms
+  /404                                   8ms
+  /landscape                             4ms
+  /                                      3ms
+  /about                                 3ms
+  /custom-home-building                  3ms
+  /privacy-policy                        2ms
+  /plumbing                              2ms
+
+Integrations (62ms in hooks)
+  @astrojs/vue                          62ms   6.0% ··▇▅··················  astro:config:setup 61ms
