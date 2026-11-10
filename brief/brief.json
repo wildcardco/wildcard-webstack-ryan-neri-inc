@@ -1,0 +1,243 @@
+{
+  "brief_status": "complete",
+  "gaps": [
+    "Contractor and plumbing license numbers are not shown on the site. Do not print any number.",
+    "No Unilock certificate or ID was found. Only the homepage headline makes the claim, so treat it as the business's own statement.",
+    "The site publishes only PO Box 145. It is unconfirmed whether 27300 S Klemme Rd is still the operating yard, so do not publish that street address.",
+    "Weekend hours are unknown. Show Monday–Friday 10am–6pm only.",
+    "No prices are available.",
+    "The GBP listing has no rating and 0 reviews. The site testimonials (Lisa H.; Marquita & Keith; Sandra S.) have no star values.",
+    "The accent colors (#FC221C, #F6F3EA, #362F17) come from the site's Squarespace CSS variables. They were not confirmed on a rendered screenshot.",
+    "The logo exists only as a white-on-black PNG on the Squarespace CDN. No dark or vector version was found, and no logo is hosted on neriinc.net. Request the original file from the owner.",
+    "A Typekit script is referenced, but no font family from it was identified.",
+    "The favicon was linked but not opened or inspected.",
+    "EXIF data on GBP photos 1 and 6 says 'Screenshot'. Confirm with the owner that these show Neri, Inc. work and are full-quality originals."
+  ],
+  "path": "upgrade",
+  "kit": "flowbite-vue",
+  "stack": {
+    "framework": "astro",
+    "styling": "tailwind-v4",
+    "islands": "vue3",
+    "island_files": ".vue <script setup>"
+  },
+  "business": {
+    "name": "Neri, Inc.",
+    "town": "Crete, IL",
+    "category": "General contractor (custom homes, landscaping, and in-house plumbing)",
+    "services": [
+      "Custom home building",
+      "Home renovations (kitchen, bathroom, basement)",
+      "Home additions (bedroom, sunroom, new wing)",
+      "Design collaboration, permits, and project management",
+      "Landscape and garden design",
+      "Irrigation and sprinkler systems",
+      "Custom outdoor lighting",
+      "Decks, pergolas, and patios",
+      "Pool houses and outdoor kitchens",
+      "Fire pits and fire features",
+      "Drainage and stormwater control",
+      "New-construction plumbing",
+      "Renovation and addition plumbing",
+      "Water heaters",
+      "Sewer and septic",
+      "Plumbing upgrades for older homes"
+    ],
+    "phone": "(708) 672-5599",
+    "address": "PO Box 145, Crete, Illinois 60417 (mailing address as published on the website)",
+    "rating": null,
+    "review_count": 0
+  },
+  "brand": {
+    "logo": {
+      "found": true,
+      "source_url": "https://images.squarespace-cdn.com/content/v1/683b6955c14e9f2dffe90b56/bced9ec5-756d-4d4d-8b94-60cd072bf7bb/LogoUpdated_White.png",
+      "notes": "White 'NERI INC.' wordmark on black, used in the current site header with alt text 'Neri, Inc.'. It needs a black or dark header background to be visible. Do not recolor or redraw it. The favicon is at https://images.squarespace-cdn.com/content/v1/683b6955c14e9f2dffe90b56/e6b3de88-ad3d-4163-8fa9-edc799133364/favicon.ico?format=100w (not inspected). Download both files and self-host them in the Astro /public folder."
+    },
+    "colors": [
+      {
+        "hex": "#000000",
+        "role": "primary (solid header and footer background; observed --black-hsl)",
+        "guessed": false
+      },
+      {
+        "hex": "#FFFFFF",
+        "role": "on-primary / header navigation text (observed --white-hsl)",
+        "guessed": false
+      },
+      {
+        "hex": "#FC221C",
+        "role": "accent for CTA buttons and highlights (observed --accent-hsl hsla(1.61,97.39%,54.9%))",
+        "guessed": false
+      },
+      {
+        "hex": "#F6F3EA",
+        "role": "light section background (observed --lightAccent-hsl hsla(45,40%,94.12%))",
+        "guessed": false
+      },
+      {
+        "hex": "#362F17",
+        "role": "dark accent / body text on light sections (observed --darkAccent-hsl hsla(46.45,40.26%,15.1%))",
+        "guessed": false
+      },
+      {
+        "hex": "#A8A6A1",
+        "role": "divider and vertical rule lines (observed .vertical-line in custom.css)",
+        "guessed": false
+      }
+    ],
+    "fonts": {
+      "observed": [
+        "Montserrat (headings, 400, uppercase)",
+        "Lato (body, 400)",
+        "Pontano Sans (meta, 400)"
+      ],
+      "kit_recommendation": "Use Flowbite Vue components unchanged. Set Tailwind v4 theme font tokens to Montserrat for headings (uppercase, tracking-wide) and Lato for body text. Optionally use Pontano Sans for small meta text such as captions and footer details. Self-host the fonts or load them from Google Fonts. Map only the observed hex values above onto Flowbite's primary, accent, and neutral tokens; add no other colors."
+    },
+    "tone": "Family-run, practical, and reassuring. The copy speaks to forever homes, backyard gatherings, and a guided build in which Neri, Inc. handles design, permits, project management, and plumbing in-house, so the client does not have to manage subcontractors. Headings are uppercase."
+  },
+  "site_map": {
+    "pages": [
+      {
+        "path": "/",
+        "purpose": "Home. Introduces the three service lines (custom homes, landscape, plumbing) and shows the 'Vincent Landscaping is now Neri Inc.' announcement. Keeps the homepage headline as written ('The South Suburbs' Only Unilock-Certified Home Builder') with no added proof. Includes real project photos, a family-business intro, the service area, and a contact CTA.",
+        "nav_label": "Home"
+      },
+      {
+        "path": "/about",
+        "purpose": "Family story and timeline: Vincent's Landscaping started in 1991, plumbing was later brought in-house, and the business is now Neri, Inc. Names Vincent (Vince) and Jennifer, son Nick, and daughter Alyssa as on the current timeline.",
+        "nav_label": "About"
+      },
+      {
+        "path": "/custom-home-building",
+        "purpose": "Services page for custom home building, renovations (kitchen, bathroom, basement), additions (bedroom, sunroom, new wing), and design collaboration, permits, and project management.",
+        "nav_label": "Custom Home Building"
+      },
+      {
+        "path": "/landscape",
+        "purpose": "Services page for landscape and garden design, irrigation and sprinklers, outdoor lighting, decks, pergolas, and patios, pool houses and outdoor kitchens, fire pits and fire features, and drainage and stormwater control. Uses the GBP outdoor project photos.",
+        "nav_label": "Landscape"
+      },
+      {
+        "path": "/plumbing",
+        "purpose": "Services page for in-house plumbing: new construction, renovations and additions, water heaters, sewer and septic, and upgrades for older homes. Describes the plumbing as licensed, as the current page does, without a license number. May include the Sandra S. water softener quote as written.",
+        "nav_label": "Plumbing"
+      },
+      {
+        "path": "/view-homes",
+        "purpose": "Project index preserving the existing project pages. These are portfolio pages, not products.",
+        "nav_label": "View Homes"
+      },
+      {
+        "path": "/view-homes/projectgallery",
+        "purpose": "Project gallery (static Astro image grid).",
+        "nav_label": ""
+      },
+      {
+        "path": "/view-homes/cardinalcourt",
+        "purpose": "Cardinal Court project page (preserved URL).",
+        "nav_label": ""
+      },
+      {
+        "path": "/view-homes/joeorrroad",
+        "purpose": "Joe Orr Road project page (preserved URL).",
+        "nav_label": ""
+      },
+      {
+        "path": "/view-homes/liberty",
+        "purpose": "Liberty project page (preserved URL).",
+        "nav_label": ""
+      },
+      {
+        "path": "/view-homes/24372-liberty",
+        "purpose": "24372 Liberty project page (preserved URL).",
+        "nav_label": ""
+      },
+      {
+        "path": "/contact",
+        "purpose": "Contact page with phone (708) 672-5599, email neriinc@att.net, PO Box 145, Crete, IL 60417, hours Mon–Fri 10am–6pm, the service area list, and a project request form (Vue island).",
+        "nav_label": "Get Started"
+      },
+      {
+        "path": "/privacy-policy",
+        "purpose": "Privacy policy, preserved from the current footer.",
+        "nav_label": ""
+      }
+    ],
+    "nav": [
+      "Home (/)",
+      "About (/about)",
+      "Services dropdown: Custom Home Building (/custom-home-building), Landscape (/landscape), Plumbing (/plumbing)",
+      "View Homes (/view-homes)",
+      "Get Started button (/contact)"
+    ],
+    "footer": [
+      "Home (/)",
+      "About (/about)",
+      "Custom Home Building (/custom-home-building)",
+      "Landscaping (/landscape)",
+      "Plumbing (/plumbing)",
+      "Contact (/contact)",
+      "Privacy Policy (/privacy-policy)",
+      "PO Box 145, Crete, Illinois 60417",
+      "(708) 672-5599 as a tel: link",
+      "neriinc@att.net as a mailto: link",
+      "Monday–Friday 10am–6pm",
+      "Instagram: https://www.instagram.com/neriinc",
+      "Facebook: https://www.facebook.com/profile.php?id=100064899931929",
+      "© Neri Inc."
+    ]
+  },
+  "page_spec": {
+    "home_sections": [
+      "Black header with the white NERI INC. logo, Flowbite navbar with a Services dropdown, and an accent-colored 'Get Started' button linking to /contact",
+      "Hero with a real GBP project photo (dusk patio with fire pit and lit pool, or the pergola over the paver patio) and an uppercase Montserrat headline. Calls to action: 'START YOUR PROJECT' to /contact and a tap-to-call (708) 672-5599 link",
+      "Announcement strip: 'Vincent Landscaping is now Neri Inc.'",
+      "Three service cards (Custom Home Building, Landscape, Plumbing), each linking to its page",
+      "Unilock headline as written on the current site, with no badge graphic, certificate number, or embellishment",
+      "Guided-build section: design, permits, project management, and in-house plumbing in one team, so the client does not manage subcontractors",
+      "Recent work grid from the GBP photos, linking to /view-homes",
+      "Family section: Vince and Jennifer Neri, Nick, and Alyssa, with the 1991 landscaping start, linking to /about",
+      "Testimonials: Lisa H., Marquita & Keith, and Sandra S., quoted as written with no stars",
+      "Service area: Crete, Frankfort, Mokena, Orland Park, the south suburbs, Will County, Cook County, and Lake County, Indiana",
+      "Light (#F6F3EA) CTA band with 'GET STARTED TODAY!', phone, email, and hours (Mon–Fri 10am–6pm)",
+      "Black footer with links, contact details, and social links"
+    ],
+    "must_include": [
+      "Name Neri, Inc. and the NERI INC. logo",
+      "Crete, Illinois",
+      "Phone (708) 672-5599 as a click-to-call link",
+      "Email neriinc@att.net",
+      "Mailing address PO Box 145, Crete, Illinois 60417",
+      "Hours: Monday–Friday 10am–6pm",
+      "Service area: Crete, Frankfort, Mokena, Orland Park, the south suburbs, Will County, Cook County, and Lake County, Indiana",
+      "Family business: Vincent (Vince) and Jennifer Neri, son Nick, and daughter Alyssa as on the About timeline",
+      "Announcement: Vincent Landscaping is now Neri Inc.",
+      "Timeline: Vincent's Landscaping started in 1991; plumbing was later brought in-house",
+      "Homepage line exactly as written: 'The South Suburbs' Only Unilock-Certified Home Builder'",
+      "Plumbing described as licensed, with no license number",
+      "All existing URLs preserved: /, /about, /custom-home-building, /landscape, /plumbing, /view-homes and its project subpages, /contact, /privacy-policy. Add a redirect from /services-1 to /custom-home-building and from /home to /",
+      "Instagram and Facebook links"
+    ],
+    "avoid": [
+      "Star ratings, review counts, or awards",
+      "Prices",
+      "License numbers or certification IDs",
+      "Treating the Unilock claim as verified, or adding Unilock badges or logos",
+      "Publishing 27300 S Klemme Rd as the business address",
+      "Weekend hours",
+      "Calling project pages products or adding store or cart features",
+      "Using images named AI_, unsplash, or pexels as proof of Neri, Inc. work",
+      "Adding colors beyond the six observed hex values",
+      "Restyling Flowbite components or adding React, Preact, or vanilla JS islands",
+      "Redrawing or recoloring the logo"
+    ],
+    "photo_plan": "Use only the 8 GBP project photos (the 'big' URLs), downloaded and optimized with Astro <Image>, plus real project images from the existing /view-homes pages. Exclude any file named AI_, unsplash, or pexels. Suggested placement: hero uses photo 6 (dusk patio, gas fire pit, lit pool, landscape lighting) or photo 5 (cream pergola over pavers). The Landscape page uses photos 2, 3, 4, 5, 7, and 8 (paver patios, fire pits, pool house, pergola, flagstone, shoreline seat wall). The Custom Home Building page uses photo 1 (two-story brick house with gray gable). Photos 1 and 6 carry 'Screenshot' in EXIF; use them, but ask the owner for the original files. Alt text should describe what is visible without inventing locations or dates.",
+    "cta": "START YOUR PROJECT (to /contact). The header button reads 'Get Started'. Secondary CTA: call (708) 672-5599.",
+    "island_framework": "vue3"
+  },
+  "existing_site": {
+    "discovered": true,
+    "notes": "https://neriinc.net returns 301 to https://www.neriinc.net/, a Squarespace site with title 'Neri, Inc. | Custom Homes, Landscape & Plumbing'. This is an upgrade: preserve the current IA. Header nav: Home, About, Services folder (Custom Home Building, Landscape, Plumbing; /services-1 returns 302 to /custom-home-building), View Homes, and a 'get started' button to /contact. Footer: Home (/home), About, Custom Home Building, Landscaping, Plumbing, Contact, Privacy Policy, PO Box 145, phone, email, hours, and © Neri Inc., 2025-2026. Project pages: /view-homes, /view-homes/projectgallery, /view-homes/cardinalcourt, /view-homes/joeorrroad, /view-homes/liberty, /view-homes/24372-liberty. Colors and fonts were read from Squarespace site.css :root and custom.css. The logo and favicon are hosted on images.squarespace-cdn.com. There are no store or product URLs. The only Vue 3 island is the contact page's ProjectRequest.vue (<script setup>): a Flowbite Vue form where the visitor checks one or more services from the observed list, chooses a project type (new home, renovation, addition, landscape, plumbing), and enters name, phone, email, town, and message. It submits to a static-friendly form endpoint or falls back to mailto:neriinc@att.net. Hydrate it with client:visible. Optionally add a GalleryLightbox.vue island on /view-homes/projectgallery. Everything else is static Astro."
+  }
+}
